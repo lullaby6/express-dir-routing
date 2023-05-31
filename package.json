@@ -1,12 +1,12 @@
 {
-  "name": "express-dir-router",
-  "version": "1.0.1",
+  "name": "express-dir-routing",
+  "version": "1.0.0",
   "description": "express directory system routing",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "publish": "npm publish"
   },
-  "keywords": ["express", "expressjs", "routing", "router"],
+  "keywords": ["express", "expressjs", "routing", "router", "routing"],
   "author": "github.com/lullaby6",
   "license": "ISC",
   "dependencies": {
