@@ -1,0 +1,15 @@
+{
+  "name": "express-dir-router",
+  "version": "1.0.0",
+  "description": "express directory system routing",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "github.com/lullaby6",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
