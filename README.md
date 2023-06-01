@@ -12,34 +12,30 @@ npm install express-dir-routing
 
 ```
 routes
-    |---index.js
-    |
-    |---users
-    |     |---index.js
-    |     |---[username]
-    |          |---index.js
-    |
-    |---products
-          |---index.js
-          |---[id]
-               |---index.js
+├── index.js
+├── users
+│   ├── index.js
+│   └── [username]
+│       └── index.js
+└── products
+    └── index.js
+        └── [id]
+            └── index.js
 ```
 
 also you can rename index.js files with index.user.js or index.products.js:
 
 ```
 routes
-    |---index.js
-    |
-    |---users
-    |     |---index.users.js
-    |     |---[username]
-    |          |---index.user-username.js
-    |
-    |---products
-          |---index.products.js
-          |---[id]
-               |---index.products-id.js
+├── index.js
+├── users
+│   ├── index.users.js
+│   └── [username]
+│       └── index.users-username.js
+└── products
+    └── index.products.js
+        └── [id]
+            └── index.products-id.js
 ```
 
 ```js

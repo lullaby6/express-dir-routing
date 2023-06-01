@@ -13,16 +13,15 @@ function loadRoutes(router, directory) {
 			const subRouter = Router({ mergeParams: true });
 			loadRoutes(subRouter, filePath);
 
-			let fileName = file
-			if(fileName.startsWith('[') && fileName.endsWith(']')) fileName = `:${fileName.slice(1, -1)}`
+			let fileName = file;
+			if(fileName.startsWith('[') && fileName.endsWith(']')) fileName = `:${fileName.slice(1, -1)}`;
 
-			console.log(fileName);
 			router.use(`/${fileName}`, subRouter);
 		} else if (file.startsWith('index.') && file.endsWith('.js')) {
 			const controller = require(filePath);
-			(['get', 'post', 'put', 'delete']).forEach(methodName => {
-				if(typeof controller[methodName] === 'function') router[methodName]('/', controller[methodName])
-				else if(typeof controller[methodName.toUpperCase()] === 'function') router[methodName]('/', controller[methodName.toUpperCase()])
+			(['get', 'post', 'put', 'delete', 'patch']).forEach(methodName => {
+				if(typeof controller[methodName] === 'function') router[methodName]('/', controller[methodName]);
+				else if(typeof controller[methodName.toUpperCase()] === 'function') router[methodName]('/', controller[methodName.toUpperCase()]);
 			})
 		}
 	});
@@ -34,4 +33,4 @@ function dirRouter(directory) {
 	return router;
 }
 
-module.exports = {loadRoutes, dirRouter};
+module.exports = {loadRoutes, dirRouter}
