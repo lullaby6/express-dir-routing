@@ -34,12 +34,12 @@ routes
 ├── get.js
 ├── users
 │   ├── get.users.js
-│   └── [username]
+│   └── $username
 │       └── get.users-username.js
 └── products
     └── get.products.js
-        └── [id]
-            └── get.products-id.js
+    └── $id
+        └── get.products-id.js
 ```
 
 ```js
