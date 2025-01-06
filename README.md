@@ -31,15 +31,15 @@ also you can rename `get.js` files with `get.user.js` or `get.products.js`:
 
 ```
 routes
-├── index.js
+├── get.js
 ├── users
-│   ├── index.users.js
+│   ├── get.users.js
 │   └── [username]
-│       └── index.users-username.js
+│       └── get.users-username.js
 └── products
-    └── index.products.js
+    └── get.products.js
         └── [id]
-            └── index.products-id.js
+            └── get.products-id.js
 ```
 
 ```js

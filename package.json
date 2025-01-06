@@ -1,6 +1,6 @@
 {
   "name": "express-dir-routing",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "express.js file-based routing system",
   "main": "index.cjs.js",
   "module": "apix.mjs.min.js",
