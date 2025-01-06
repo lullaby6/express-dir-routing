@@ -1,10 +1,11 @@
 {
   "name": "express-dir-routing",
-  "version": "1.0.4",
-  "description": "express directory system routing",
-  "main": "index.js",
+  "version": "1.1.0",
+  "description": "express.js file-based routing system",
+  "main": "index.cjs.js",
+  "module": "apix.mjs.min.js",
   "scripts": {
-    "publish": "npm publish"
+    "publish": "npm publish --access=public"
   },
   "keywords": ["express", "expressjs", "routing", "router", "routing", "nextjs", "next"],
   "author": "github.com/lullaby6",

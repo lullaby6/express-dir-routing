@@ -1,6 +1,6 @@
 # express-dir-routing
 
-A routing system for express.js using directories like NextJS 13 or SvelteKit!
+A file-based routing system for `express.js` using directories like `NextJS 13` or `SvelteKit`!
 
 # Installation
 
@@ -12,18 +12,22 @@ npm install express-dir-routing
 
 ```
 routes
-├── index.js
+├── get.js
 ├── users
-│   ├── index.js
-│   └── [username]
-│       └── index.js
+│   ├── get.js
+│   ├── post.js
+│   └── $username
+│       └── get.js
 └── products
-    └── index.js
-        └── [id]
-            └── index.js
+    └── get.js
+    └── post.js
+    └── put.js
+    └── delete.js
+        └── $id
+            └── get.js
 ```
 
-also you can rename index.js files with index.user.js or index.products.js:
+also you can rename `get.js` files with `get.user.js` or `get.products.js`:
 
 ```
 routes
@@ -42,7 +46,7 @@ routes
 // app.js
 const express = require('express')
 const path = require('path')
-const {dirRouter} = require('express-dir-routing');
+const { dirRouter } = require('express-dir-routing');
 
 const app = express();
 
@@ -50,31 +54,27 @@ app.use('/', dirRouter(path.join(__dirname, 'routes')));
 ```
 
 ```js
-// routes -> users -> index.users.js
-function get(req, res){
+// routes -> users -> get.users.js
+function controller(req, res){
     res.send('GET user');
 }
 
-function post(req, res){
-    res.send('CREATE user');
-}
-
-module.exports = {
-    get,
-    post
-}
+module.exports = controller
 ```
 
-and you can get URL params naming a directory with [] like "[username]"
+and you can get URL params naming a directory with $ like "$username"
 
 ```js
-// routes -> users -> [username] -> index.users-username.js
-function get(req, res){
+// routes -> users -> $username -> get.users-username.js
+function controller(req, res){
     const {username} = req.params;
+
     res.send(`GET user ${username}`);
 }
 
-module.exports = {
-    get
-}
+module.exports = controller
 ```
+
+# License
+
+MIT
