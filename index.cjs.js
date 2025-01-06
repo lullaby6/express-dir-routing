@@ -20,11 +20,11 @@ async function loadRoutes(router, directory) {
 			return;
 		}
 
-		if (!file.endsWith('.js') || !file.endsWith('.ts')) return;
+		if (!file.endsWith('.js') && !file.endsWith('.ts')) return;
 
 		const fileName = file.split('.')[0].toLowerCase();
 
-		if (!fileName !== 'get' && !fileName !== 'post' && !fileName !== 'put' && !fileName !== 'delete' && !fileName !== 'patch') return;
+		if (fileName !== 'get' && fileName !== 'post' && fileName !== 'put' && fileName !== 'delete' && fileName !== 'patch') return;
 
 		const controller = require(filePath);
 
